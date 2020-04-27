@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Name;
+use Session;
 
 class NameController extends Controller
 {
@@ -36,7 +37,16 @@ class NameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        Name::create([
+            'name' => $request->name
+        ]);
+
+        Session::flash('success', 'Name created successfully');
+        return redirect()->route('names.index');
     }
 
     /**
@@ -81,6 +91,7 @@ class NameController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Name::destroy($id);
+        return redirect()->route('names.index');
     }
 }

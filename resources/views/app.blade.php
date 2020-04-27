@@ -46,6 +46,14 @@
                                     </a>
                                 </li>
 
+                                <li class="nav-item has-treeview menu-open">
+                                    <a href="{{ route('names.index') }}" class="nav-link">
+                                        <i class="nav-icon fas fa-users"></i>
+                                        <p>
+                                            Names
+                                        </p>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

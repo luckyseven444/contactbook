@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('phones.store') }}" method="post">
+                    <form action="{{ route('names.store') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <div class="row">
